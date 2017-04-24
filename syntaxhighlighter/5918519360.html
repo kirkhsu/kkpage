@@ -198,22 +198,27 @@
                      }
                      else {
                          //alert('id2=' + id);
-                         var loadDateTime = new Date();
-                         window.setTimeout(function () {
-                             //alert('not open mzplus');
-                             var timeOutDateTime = new Date();
-                             if (timeOutDateTime - loadDateTime < 1000) {
-                                 window.location = "http://www.mzplus.com/blankpage.html?id=" + id;
-                             } else {
-                                 document.cookie = "MZDownLoad=" + decodeURI("TRUE").toString();
-                                 window.location = "http://www.mzplus.com/blankpage.html?id=" + id;
-                                 window.close();
-                             }
-                         }, 25);
+                         // var loadDateTime = new Date();
+                         // window.setTimeout(function () {
+                         //     //alert('not open mzplus');
+                         //     var timeOutDateTime = new Date();
+                         //     if (timeOutDateTime - loadDateTime < 1000) {
+                         //         window.location = "http://www.mzplus.com/blankpage.html?id=" + id;
+                         //     } else {
+                         //         document.cookie = "MZDownLoad=" + decodeURI("TRUE").toString();
+                         //         window.location = "http://www.mzplus.com/blankpage.html?id=" + id;
+                         //         window.close();
+                         //     }
+                         // }, 25);
                          //alert('open mzplus');
-                         window.location = "mzplus://openpage/" + id;
+                         try{
+                            window.location = "mzplus://openpage/" + id;
+                         }catch(err){
+                            alert(err)
+                            window.location = "http://www.mzplus.com/blankpage.html?id=" + id;
+                         }
                      }
-                     //window.location = "http://www.mzplus.com/blankpage.html?id=" + id;
+                     
                  }
              } else if (navigator.userAgent.toUpperCase().match(/ANDROID/)) {
                  //if (navigator.userAgent.toString().indexOf('FBAV').toString() == "-1") {
