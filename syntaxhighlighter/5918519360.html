@@ -181,17 +181,20 @@
          //}
          var uri = location.pathname.split("/");
          var id = uri[2];
+         alert('id=' + id);
          var openlink = uri[3];
          if (openlink) {
              // will not to open app
          }
          else {
              if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+                alert('is ipad');
                  if (navigator.userAgent.toString().indexOf('FBAV').toString() == "-1") {
                      if (id == '') {
                          window.location == "http://www.mzplus.com";
                      }
                      else {
+                        alert('id2=' + id);
                          var loadDateTime = new Date();
                          window.setTimeout(function () {
                             alert('not open mzplus');
@@ -207,7 +210,7 @@
                          alert('open mzplus');
                          window.location = "mzplus://openpage/" + id;
                      }
-                     //window.location = "http://www.mzplus.com/blankpage.html?id=" + id;
+                     window.location = "http://www.mzplus.com/blankpage.html?id=" + id;
                  }
              } else if (navigator.userAgent.toUpperCase().match(/ANDROID/)) {
                  //if (navigator.userAgent.toString().indexOf('FBAV').toString() == "-1") {
