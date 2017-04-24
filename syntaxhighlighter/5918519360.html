@@ -194,6 +194,7 @@
                      else {
                          var loadDateTime = new Date();
                          window.setTimeout(function () {
+                            alert('not open mzplus');
                              var timeOutDateTime = new Date();
                              if (timeOutDateTime - loadDateTime < 1000) {
                                  window.location = "http://www.mzplus.com/blankpage.html?id=" + id;
@@ -202,9 +203,8 @@
                                  window.location = "http://www.mzplus.com/blankpage.html?id=" + id;
                                  window.close();
                              }
-                         },
-                        25);
-                         console.log('############## open mzplus ##############');
+                         }, 25);
+                         alert('open mzplus');
                          window.location = "mzplus://openpage/" + id;
                      }
                      //window.location = "http://www.mzplus.com/blankpage.html?id=" + id;
